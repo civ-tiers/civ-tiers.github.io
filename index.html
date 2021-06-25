@@ -81,6 +81,7 @@
   <script>
     const flagUrls = {
     'https://images-ext-2.discordapp.net/external/w8QDsUP_-Hsxs4LVaSsbmvbgMffrmcBlaiIfq9f1d6A/https/static.miraheze.org/civwikiwiki/5/55/Commonwealth_flag.png': 'SABCDEF',
+    'https://static.miraheze.org/civwikiwiki/6/62/USA_Flag.png': 'SABCDE'
     '270px-antipodeanunionflagpng.png': 'BCDEF',
     '270px-ashelorflagpng.png': 'CDEF',
     '270px-caledoniaflagpng.png': 'BCDEF',
@@ -150,7 +151,7 @@
       const div = document.createElement('div');
       div.className = 'flag';
       div.style.backgroundImage = 'url("'+url+'")';
-      div.title = file;
+      div.title = file.split('/')[file.split('/').length-1];
       document.getElementById('tier_'+tiers[file]).appendChild(div);
     });
     function decideTier(avail) {
